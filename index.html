@@ -1,0 +1,278 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Bottom navbar example · Bootstrap</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+        .float-label-control {
+            position: relative;
+            margin-bottom: 1.5em;
+        }
+
+            .float-label-control ::-webkit-input-placeholder {
+                color: transparent;
+            }
+
+            .float-label-control :-moz-placeholder {
+                color: transparent;
+            }
+
+            .float-label-control ::-moz-placeholder {
+                color: transparent;
+            }
+
+            .float-label-control :-ms-input-placeholder {
+                color: transparent;
+            }
+
+            .float-label-control input:-webkit-autofill,
+            .float-label-control textarea:-webkit-autofill {
+                background-color: transparent !important;
+                -webkit-box-shadow: 0 0 0 1000px white inset !important;
+                -moz-box-shadow: 0 0 0 1000px white inset !important;
+                box-shadow: 0 0 0 1000px white inset !important;
+            }
+
+            .float-label-control input, .float-label-control textarea, .float-label-control label {
+                font-size: 1.3em;
+                box-shadow: none;
+                -webkit-box-shadow: none;
+            }
+
+                .float-label-control input:focus,
+                .float-label-control textarea:focus {
+                    box-shadow: none;
+                    -webkit-box-shadow: none;
+                    border-bottom-width: 2px;
+                    padding-bottom: 0;
+                }
+
+                .float-label-control textarea:focus {
+                    padding-bottom: 4px;
+                }
+
+            .float-label-control input, .float-label-control textarea {
+                display: block;
+                width: 100%;
+                padding: 0.1em 0em 1px 0em;
+                border: none;
+                border-radius: 0px;
+                border-bottom: 1px solid #aaa;
+                outline: none;
+                margin: 0px;
+                background: none;
+            }
+
+            .float-label-control textarea {
+                padding: 0.1em 0em 5px 0em;
+            }
+
+            .float-label-control label {
+                position: absolute;
+                font-weight: normal;
+                top: -1.0em;
+                left: 0.08em;
+                color: #aaaaaa;
+                z-index: -1;
+                font-size: 0.85em;
+                -moz-animation: float-labels 300ms none ease-out;
+                -webkit-animation: float-labels 300ms none ease-out;
+                -o-animation: float-labels 300ms none ease-out;
+                -ms-animation: float-labels 300ms none ease-out;
+                -khtml-animation: float-labels 300ms none ease-out;
+                animation: float-labels 300ms none ease-out; /* There is a bug sometimes pausing the animation. This avoids that.*/
+                animation-play-state: running !important;
+                -webkit-animation-play-state: running !important;
+            }
+
+            .float-label-control input.empty + label,
+            .float-label-control textarea.empty + label {
+                top: 0.1em;
+                font-size: 1.5em;
+                animation: none;
+                -webkit-animation: none;
+            }
+
+            .float-label-control input:not(.empty) + label,
+            .float-label-control textarea:not(.empty) + label {
+                z-index: 1;
+            }
+
+            .float-label-control input:not(.empty):focus + label,
+            .float-label-control textarea:not(.empty):focus + label {
+                color: #aaaaaa;
+            }
+
+            .float-label-control.label-bottom label {
+                -moz-animation: float-labels-bottom 300ms none ease-out;
+                -webkit-animation: float-labels-bottom 300ms none ease-out;
+                -o-animation: float-labels-bottom 300ms none ease-out;
+                -ms-animation: float-labels-bottom 300ms none ease-out;
+                -khtml-animation: float-labels-bottom 300ms none ease-out;
+                animation: float-labels-bottom 300ms none ease-out;
+            }
+
+            .float-label-control.label-bottom input:not(.empty) + label,
+            .float-label-control.label-bottom textarea:not(.empty) + label {
+                top: 3em;
+            }
+        .set-width {
+            width: 120px;
+            height: 25px;
+        }
+        .hidden {
+            display: none;
+        }
+   
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron mt-5">
+            <h1 style="text-align:center">Purity Converter</h1>
+            <p style="text-align:center" class="lead"></p>
+            <div class="row" style="margin-top:50px;">
+                <div class="col-md-6">
+                    <div class="card">
+                        <h5 class="card-header">Gold Metal I Have</h5>
+                        <div class="card-body">
+                            <div class="row">
+                                <form>
+                                    I have <input class="set-width" type="text" placeholder="Weight" id="ihaveweight">
+                                    <select id="unit">
+    <option value="Grams">Grams</option>
+    <option value="Kilograms">Kilograms</option>
+    <option value="Tons">Tons</option>
+   
+</select> of  <input class="set-width" type="text" placeholder="% Purity" id="ihavepurity"> %
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <h5 class="card-header">Gold Metal I Want</h5>
+                        <div class="card-body">
+                           <div class="row">
+                               <form>
+                                       I want <!--<input class="set-width" type="text" placeholder="Weight"> in--> <input class="set-width" type="text" placeholder="% Purity" id="iwantpurity"> %
+                               </form> 
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+               <div class="col-md-12">
+                   <button type="button" class="btn btn-info mx-auto" style="width: 200px; display:block; margin-top:2%" id="btn">Compute</button>
+               </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div style="margin-top:3%;" class="card hidden" id="resulttext">
+                        <div class="card-body">
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Purity Converter</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <!--<li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+                <li class="nav-item dropup">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropup</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown10">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+
+                </li>-->
+            </ul>
+            <img src="photo.jpg" class="rounded-circle" alt="Cinque Terre">
+        </div>
+    </nav>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+
+        $(function () {
+            $('#btn').click(function () {
+                $('#resulttext').hide();
+                var ihaveweight = $('#ihaveweight').val();
+                var ihavepurity = $('#ihavepurity').val();
+                var iwantweight = $('#iwantweight').val();
+                var iwantpurity = $('#iwantpurity').val();
+                var unit = $('#unit').val();
+                var result = 0;
+                
+
+
+                if (ihavepurity > iwantpurity) {
+                    result = (((ihaveweight * ihavepurity / 1000) / iwantpurity) * 1000) - ihaveweight;
+
+                    
+                    var addedmetal = (parseFloat(ihaveweight) + parseFloat(result)).toFixed(3);
+                    $('#resulttext').html('Add ' + result.toFixed(3).bold() + ' ' + unit.bold() + ' of copper to your ' + ihaveweight + ' ' + unit + '.' + ' Your final metal will be ' + addedmetal + ' ' + unit).show();
+                } else {
+                    
+
+                    ihavepurity = 1000 - ihavepurity
+                    iwantpurity = 1000 - iwantpurity
+                    result = (((ihaveweight * ihavepurity / 1000) / iwantpurity) * 1000) - ihaveweight
+                    iwantpurity = -iwantpurity + 1000;
+                    var addedmetal = (parseFloat(ihaveweight) + parseFloat(result)).toFixed(3);
+                    $('#resulttext').html('Add ' + result.toFixed(3).bold() + ' ' + unit.bold() + ' of pure gold (99.99%) to your ' + ihaveweight + ' ' + unit + '.' + ' Your final metal will be ' + addedmetal + ' ' + unit).show();
+                }
+
+            });
+        });
+
+      
+
+    </script>
+</body>
+</html>
